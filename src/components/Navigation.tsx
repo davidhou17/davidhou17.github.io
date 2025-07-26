@@ -13,25 +13,24 @@ const Navigation = () => {
   }, []);
   const navItems = [{
     label: 'About',
-    href: '#about'
+    href: '/about',
+    isExternal: true
   }, {
     label: 'Projects',
     href: '#projects'
   }, {
-    label: 'Skills',
-    href: '#skills'
-  }, {
-    label: 'Resume',
-    href: '#resume'
-  }, {
     label: 'Contact',
     href: '#contact'
   }];
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    element?.scrollIntoView({
-      behavior: 'smooth'
-    });
+  const handleNavClick = (href: string, isExternal?: boolean) => {
+    if (isExternal) {
+      window.location.href = href;
+    } else {
+      const element = document.querySelector(href);
+      element?.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
     setIsOpen(false);
   };
   return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur-sm border-b border-border' : 'bg-transparent'}`}>
@@ -44,7 +43,7 @@ const Navigation = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map(item => <button key={item.label} onClick={() => scrollToSection(item.href)} className="text-muted-foreground hover:text-teal-dark transition-colors">
+            {navItems.map(item => <button key={item.label} onClick={() => handleNavClick(item.href, item.isExternal)} className="text-muted-foreground hover:text-teal-dark transition-colors">
                 {item.label}
               </button>)}
           </div>
@@ -57,7 +56,7 @@ const Navigation = () => {
         
         {/* Mobile Menu */}
         {isOpen && <div className="md:hidden mt-4 py-4 bg-background border border-border rounded-lg shadow-lg">
-            {navItems.map(item => <button key={item.label} onClick={() => scrollToSection(item.href)} className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-teal-dark hover:bg-secondary/50 transition-colors">
+            {navItems.map(item => <button key={item.label} onClick={() => handleNavClick(item.href, item.isExternal)} className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-teal-dark hover:bg-secondary/50 transition-colors">
                 {item.label}
               </button>)}
           </div>}
