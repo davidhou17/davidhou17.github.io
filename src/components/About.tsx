@@ -1,6 +1,5 @@
 const About = () => {
-  return (
-    <section id="about" className="section-spacing bg-secondary/30">
+  return <section id="about" className="section-spacing bg-secondary/30">
       <div className="container-width">
         <h2 className="text-3xl md:text-4xl font-medium mb-12 text-center">
           About Me
@@ -26,16 +25,9 @@ const About = () => {
             </p>
           </div>
           
-          <div className="border-l-4 border-teal pl-6 bg-card p-6 rounded-r-lg">
-            <p className="text-muted-foreground italic">
-              "The best documentation doesn't just explain how something works—it shows 
-              why it matters and helps users achieve their goals."
-            </p>
-          </div>
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
