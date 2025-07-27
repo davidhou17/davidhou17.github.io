@@ -5,7 +5,6 @@ The website is set up with GitHub Actions for automatic deployment:
 3. Your site will be available at: https://dhou.github.io
 
 ### Manual Deployment
-You can also deploy manually:
 ```sh
 # Run the provided deploy script
 ./deploy.sh
