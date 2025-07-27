@@ -16,26 +16,27 @@ const About = () => {
 
                 <p className="text-base text-muted-foreground leading-relaxed">
                   Currently, I'm a technical writer at <span className="text-[#00684A]">MongoDB</span>, 
-                  where I lead the documentation for our GenAI products. I write 
-                  the code and the words that developers use when learning how to build AI applications with MongoDB.
-                  I also serve as our team's AI technologist, building a culture of responsible 
-                  AI experimentation and innovation and writing prompts to reduce tech debt and 
-                  improve productivity.
+                  where I lead the documentation for our GenAI products. In other words, I write 
+                  both the code and the words that developers use when learning how to build AI applications with MongoDB.
+                  I also serve as our team's AI technologist, where I'm learning 
+                  the latest and greatest in AI tooling, writing prompts to reduce tech debt and 
+                  improve productivity, and building a culture of innovative yet responsible
+                  AI use on our team.
                 </p>
 
               <p className="text-base text-muted-foreground leading-relaxed">
-                Previously, I worked at New Relic, doing technical and UI/UX writing
-                for their observability platform, and at Tsai CITY, doing narrative storytelling 
-                and journalism on the entrepreneurial ecosystem at Yale and New Haven. 
-                In College, I was the Co-Editor-in-Chief 
+                Previously, I worked at New Relic, where I did technical and UI/UX writing
+                for their observability platform, and at Tsai CITY, where I did narrative 
+                journalism, writing biweekly articles on the entrepreneurial ecosystem 
+                at Yale and New Haven. In college, I was the Co-Editor-in-Chief 
                 of the Yale Record, America's oldest humor magazine.
               </p>
 
               <p className="text-base text-muted-foreground leading-relaxed">
                 I currently live in NYC. Outside of work, I like to run, 
-                listen to podcasts, and think about food, often all at once. 
+                listen to podcasts, and think about food - often all at once. 
                 Lately, I've been vibe coding and reminiscing about when I used
-                to play the piano more often. When I'm not in NYC, you can 
+                to play the piano more often. When I'm not in NYC, you might 
                 find me hiking in the mountains or spending time with family.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed">
