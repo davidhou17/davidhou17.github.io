@@ -18,7 +18,7 @@ const About = () => {
                   Currently, I'm a technical writer at <span className="text-[#00684A]">MongoDB</span>, 
                   where I lead the documentation for our GenAI products. In other words, I write 
                   both the code and the words that developers use when learning how to build AI applications with MongoDB.
-                  I also serve as our team's AI technologist, where I'm learning 
+                  I also serve as our team's AI technologist, which entails learning 
                   the latest and greatest in AI tooling, writing prompts to reduce tech debt and 
                   improve productivity, and building a culture of innovative yet responsible
                   AI use on our team.
