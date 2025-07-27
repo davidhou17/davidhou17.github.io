@@ -19,7 +19,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				inter: ['Inter', 'sans-serif'],
+				sans: ['Roboto Condensed', 'sans-serif'],
+				'roboto-condensed': ['Roboto Condensed', 'sans-serif'],
+				'roboto-condensed-light': ['Roboto Condensed Light', 'Roboto Condensed', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
