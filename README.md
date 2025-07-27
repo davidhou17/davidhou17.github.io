@@ -4,6 +4,32 @@
 
 **URL**: https://lovable.dev/projects/36980ea9-5ba5-499f-9f0a-5057cadd96ee
 
+## GitHub Pages Deployment
+This project is configured to deploy to GitHub Pages. To deploy your site:
+
+### Automatic Deployment
+The project is set up with GitHub Actions for automatic deployment:
+1. Push changes to the `main` branch
+2. GitHub Actions will automatically build and deploy your site
+3. Your site will be available at: https://dhou.github.io
+
+### Manual Deployment
+You can also deploy manually:
+```sh
+# Run the provided deploy script
+./deploy.sh
+
+# Or deploy step by step
+npm run build
+npm run deploy
+```
+
+### Custom Domain Setup
+If you want to use a custom domain:
+1. Update the CNAME file in the public directory with your domain
+2. Configure your DNS provider to point to GitHub Pages
+3. Enable custom domain in your repository's GitHub Pages settings
+
 ## How can I edit this code?
 
 There are several ways of editing your application.
@@ -62,7 +88,10 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/36980ea9-5ba5-499f-9f0a-5057cadd96ee) and click on Share -> Publish.
+You can deploy this project using:
+
+1. **GitHub Pages**: Follow the GitHub Pages deployment instructions above.
+2. **Lovable**: Open [Lovable](https://lovable.dev/projects/36980ea9-5ba5-499f-9f0a-5057cadd96ee) and click on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
 
