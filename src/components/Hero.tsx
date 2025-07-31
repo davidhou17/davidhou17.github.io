@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Mail, Github, Linkedin } from "lucide-react";
+import { ChevronDown, Mail, Github, Linkedin, Piano } from "lucide-react";
 import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
@@ -101,6 +101,9 @@ const Hero = () => {
               </a>
               <a href="https://linkedin.com/in/d-hou" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-teal transition-colors">
                 <Linkedin className="w-4 h-4" />
+              </a>
+              <a href="https://www.youtube.com/watch?v=IHRoIfBhORU" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-teal transition-colors">
+                <Piano className="w-4 h-4" />
               </a>
             </div>
           </div>

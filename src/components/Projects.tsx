@@ -105,9 +105,14 @@ const Projects = () => {
           description: "Finalist for company hackathon (top 8% of submissions)"
         },
         {
-          title: "MongoDB AI Agent",
+          title: "LangGraph MongoDB Movie Agent",
           url: "https://github.com/davidhou17/mongodb-ai-agent",
-          description: "Implementation of an AI agent using MongoDB"
+          description: "Conversational AI agent using LangGraph that uses MongoDB for agentic RAG and memory (short and long-term)"
+        },
+        {
+          title: "Frameworkless MongoDB AI Agent",
+          url: "https://github.com/davidhou17/mongodb-ai-agent",
+          description: "Implementation of an AI agent using MongoDB without the abstractions"
         }
       ]
     },
