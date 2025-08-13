@@ -111,7 +111,7 @@ const Projects = () => {
         },
         {
           title: "LangGraph MongoDB Movie Agent",
-          url: "https://github.com/davidhou17/mongodb-ai-agent",
+          url: "https://github.com/davidhou17/langgraph-mongodb-movie-agent",
           description: "Conversational AI agent using LangGraph that uses MongoDB for agentic RAG and memory (short and long-term)"
         },
         {
