@@ -92,8 +92,13 @@ const Projects = () => {
     {
       title: "Code",
       description: "Open source projects and code samples for AI developers",
-      icon: <Code className="w-5 h-5 text-foreground/80" />,
+      icon: <Code className="w-5 h-5 text-foreground/80" />, 
       links: [
+        {
+          title: "Prompt Saver MCP Server",
+          url: "https://github.com/davidhou17/prompt-saver-mcp",
+          description: "MCP server that saves successful LLM conversation threads as prompts that can be used for future tasks."
+        },
         {
           title: "Jupyter Notebooks for AI Developers",
           url: "https://github.com/mongodb/docs-notebooks",
@@ -113,7 +118,7 @@ const Projects = () => {
           title: "Frameworkless MongoDB AI Agent",
           url: "https://github.com/davidhou17/mongodb-ai-agent",
           description: "Implementation of an AI agent using MongoDB without the abstractions"
-        }
+        },
       ]
     },
     {
