@@ -37,7 +37,7 @@ const Projects = () => {
         },
         {
           title: "Natural Language to MongoDB Prompting Guide",
-          url: "https://www.mongodb.com/docs/manual/reference/natural-language-queries/",
+          url: "https://www.mongodb.com/docs/manual/natural-language-to-mongodb/",
           description: "Guide for converting natural language to MongoDB queries"
         },
         {
