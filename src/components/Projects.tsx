@@ -86,6 +86,11 @@ const Projects = () => {
           title: "LangGraph Integration",
           url: "https://www.mongodb.com/docs/atlas/ai-integrations/langgraph/",
           description: "Integration guide for LangGraph"
+        },
+        {
+          title: "Get Started with the MongoDB MCP Server",
+          url: "https://www.mongodb.com/docs/mcp-server/get-started/",
+          description: "Quickstart tutorial for the MongoDB MCP Server"
         }
       ]
     },
@@ -98,6 +103,11 @@ const Projects = () => {
           title: "Prompt Saver MCP Server",
           url: "https://github.com/davidhou17/prompt-saver-mcp",
           description: "MCP server that saves successful LLM conversation threads as prompts that can be used for future tasks."
+        },
+        {
+          title: "OpenAI to Azure OpenAI CLI Tool",
+          url: "https://www.npmjs.com/package/openai-to-azure-openai-cli",
+          description: "CLI tool to convert OpenAI code to Azure OpenAI compatible code (curl, Python, JS/TS)."
         },
         {
           title: "Jupyter Notebooks for AI Developers",
@@ -128,7 +138,7 @@ const Projects = () => {
       links: [
         {
           title: "AI the Docs 2025",
-          url: "https://apithedocs.org/ai-25/david-hou",
+          url: "https://pronovix.com/event/ai-the-docs-2025/david-hou",
           description: "\"Rethinking Docs as Code in the Age of Vibe Coding\""
         }
       ]
