@@ -22,60 +22,65 @@ const Projects = () => {
   const projectCategories = [
     {
       title: "Foundational Content",
-      description: "Technical documentation and guides for MongoDB's AI and vector search capabilities",
+      description: "Product documentation and foundational content built from 0 to 1",
       icon: <Book className="w-5 h-5 text-foreground/80" />,
       links: [
         {
+          title: "Voyage AI by MongoDB",
+          url: "https://www.mongodb.com/docs/voyageai",
+          description: "Docs for Voyage AI's state-of-the-art embedding and reranking models"
+        },
+        {
+          title: "MongoDB MCP Server",
+          url: "https://www.mongodb.com/docs/mcp-server/",
+          description: "Docs for the MongoDB MCP Server"
+        },
+        {
+          title: "AI Framework and Platform Integrations",
+          url: "https://www.mongodb.com/docs/atlas/ai-integrations/",
+          description: "Doc for MongoDB's AI integrations"
+        },
+        {
+          title: "MongoDB Vector Search",
+          url: "https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-overview/",
+          description: "Docs for MongoDB Vector Search"
+        },
+        {
           title: "Build AI Agents with MongoDB",
           url: "https://www.mongodb.com/docs/atlas/atlas-vector-search/ai-agents/",
-          description: "Guide for implementing AI agents using MongoDB"
+          description: "Foundational page for implementing AI agents using MongoDB"
         },
         {
-          title: "RAG (Retrieval-Augmented Generation)",
-          url: "https://www.mongodb.com/docs/atlas/atlas-vector-search/rag/",
-          description: "Documentation on implementing RAG patterns"
-        },
-        {
-          title: "Natural Language to MongoDB Prompting Guide",
+          title: "Natural Language to MongoDB",
           url: "https://www.mongodb.com/docs/manual/natural-language-to-mongodb/",
-          description: "Guide for converting natural language to MongoDB queries"
-        },
-        {
-          title: "MongoDB MCP Server Docs",
-          url: "https://www.mongodb.com/docs/mcp-server/?client=claude&deployment-type=atlas",
-          description: "Documentation for MCP Server"
-        },
-        {
-          title: "Atlas Vector Search Overview",
-          url: "https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-overview/",
-          description: "Comprehensive guide to Atlas Vector Search"
-        },
-        {
-          title: "Atlas Vector Search Performance Benchmark",
-          url: "https://www.mongodb.com/docs/atlas/atlas-vector-search/benchmark/",
-          description: "Performance benchmarks for vector search"
+          description: "Guide for using LLMs to convert natural language to MongoDB queries"
         }
       ]
     },
     {
       title: "Tutorials",
-      description: "Step-by-step guides for implementing AI solutions with MongoDB",
+      description: "Step-by-step guides and tutorials for AI developers",
       icon: <ScrollText className="w-5 h-5 text-foreground/80" />,
       links: [
         {
-          title: "Local RAG Implementation",
-          url: "https://www.mongodb.com/docs/atlas/atlas-vector-search/tutorials/local-rag",
-          description: "Tutorial on implementing RAG locally"
+          title: "Semantic Search",
+          url: "https://www.mongodb.com/docs/voyageai/tutorials/semantic-search",
+          description: "Guide to implementing semantic search"
+        },
+        {
+          title: "Retrieval-Augmented Generation (RAG)",
+          url: "https://www.mongodb.com/docs/voyageai/tutorials/rag",
+          description: "Guide to building RAG applications"
+        },
+        {
+          title: "Get Started with the MongoDB MCP Server",
+          url: "https://www.mongodb.com/docs/mcp-server/get-started/",
+          description: "Quickstart tutorial for the MongoDB MCP Server"
         },
         {
           title: "Create Embeddings",
-          url: "https://www.mongodb.com/docs/atlas/atlas-vector-search/create-embeddings/",
+          url: "https://www.mongodb.com/docs/atlas/atlas-vector-search/crud-embeddings/create-embeddings-manual/",
           description: "Guide to creating embeddings for vector search"
-        },
-        {
-          title: "AI Framework and Platform Integrations",
-          url: "https://www.mongodb.com/docs/atlas/ai-integrations/",
-          description: "Integrating MongoDB with AI frameworks"
         },
         {
           title: "LangChain Integration",
@@ -87,16 +92,11 @@ const Projects = () => {
           url: "https://www.mongodb.com/docs/atlas/ai-integrations/langgraph/",
           description: "Integration guide for LangGraph"
         },
-        {
-          title: "Get Started with the MongoDB MCP Server",
-          url: "https://www.mongodb.com/docs/mcp-server/get-started/",
-          description: "Quickstart tutorial for the MongoDB MCP Server"
-        }
       ]
     },
     {
       title: "Code",
-      description: "Open source projects and code samples for AI developers",
+      description: "Open source coding projects and tools",
       icon: <Code className="w-5 h-5 text-foreground/80" />, 
       links: [
         {
@@ -133,7 +133,7 @@ const Projects = () => {
     },
     {
       title: "Public Speaking",
-      description: "Conference talks and presentations on AI and documentation",
+      description: "Conference talks and presentations",
       icon: <Mic className="w-5 h-5 text-foreground/80" />,
       links: [
         {
