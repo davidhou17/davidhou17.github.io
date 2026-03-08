@@ -55,9 +55,8 @@ const Hero = () => {
           
           <p className="text-xl md:text-xl text-muted-foreground mb-8 leading-relaxed">
             I work at the intersection of{" "}
-            <span className="text-teal-dark font-medium">developer education</span>,{" "}
-            <span className="text-teal-dark font-medium">AI engineering</span>, and{" "}
-            <span className="text-teal-dark font-medium">technical documentation</span>
+            <span className="text-teal-dark font-medium">education</span> and{" "}
+            <span className="text-teal-dark font-medium">AI</span>{" "}
           </p>
           
           <div className="flex flex-wrap items-center gap-4">

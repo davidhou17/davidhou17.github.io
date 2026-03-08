@@ -10,27 +10,20 @@ const About = () => {
             <div className="space-y-4">
 
             <p className="text-base text-muted-foreground leading-relaxed">
-                  I'm a proud generalist that works at the intersection of developer education, 
-                  AI engineering, and technical documentation. In other words, I'm a builder and writer
-                  that loves helping people reach their "aha!" moment. I'm passionate about 
-                  how AI will change the way we learn.
-                </p>
-
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  Currently, I'm a technical writer at <span className="text-[#00684A]">MongoDB</span>, 
-                  where I lead the documentation for our GenAI products. That is, I write 
-                  both the code and the words that developers use when learning how to build AI applications with MongoDB.
-                  I also serve as our team's AI technologist, which entails learning 
-                  the latest and greatest in AI tooling, writing prompts to automate workflows 
-                  and improve productivity, and building a culture of innovative yet responsible
-                  AI use on our team.
+                  I'm a writer and builder. I love helping people reach "aha" moments with technology and am 
+                  passionate about how AI will change the way we learn. I'm currenty leading 
+                  product education at <strong>Decagon</strong>, where I'm building our 
+                  documentation, learning resources, and curricula for our conversational AI platform.
                 </p>
 
               <p className="text-base text-muted-foreground leading-relaxed">
-                Previously, I worked at New Relic, where I did technical and UI/UX writing
-                for their observability platform, and at Tsai CITY, where I did narrative 
-                journalism, writing biweekly articles on the entrepreneurial ecosystem 
-                at Yale and New Haven. In college, I was the Co-Editor-in-Chief 
+                Previously, I was a technical writer at MongoDB,
+                where I led documentation for our AI products. I also served as our team's AI technologist -- learning 
+                the latest and greatest in AI tooling, writing prompts to automate workflows 
+                and improve productivity, and building a culture of innovative yet responsible
+                AI use. Before that, I did technical and UI/UX writing
+                at New Relic and narrative journalism at Tsai CITY, where I wrote biweekly articles on 
+                the entrepreneurial ecosystem at Yale and New Haven. In college, I was the Co-Editor-in-Chief 
                 of the Yale Record, America's oldest humor magazine.
               </p>
 
@@ -38,7 +31,7 @@ const About = () => {
                 I currently live in NYC. Outside of work, I like to run, 
                 listen to podcasts, and think about food, and often all at once. 
                 Lately, I've been vibe coding and reminiscing about when I used
-                to play the <a href="https://www.youtube.com/watch?v=IHRoIfBhORU" className="text-blue-600 hover:text-blue-800 underline">
+                to play the <a href="https://www.youtube.com/watch?v=IHRoIfBhORU" className="text-gray-600 hover:text-blue-800 underline">
                 piano</a> more often. When I'm not in NYC, I'm probably
                 hiking or spending time with family.
               </p>
