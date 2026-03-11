@@ -105,6 +105,11 @@ const Projects = () => {
           description: "MCP server that saves successful LLM conversation threads as prompts that can be used for future tasks."
         },
         {
+          title: "Local Docs Evals",
+          url: "https://github.com/davidhou17/local-docs-eval",
+          description: "A fully local evaluation suite for your documentation repositories."
+        },
+        {
           title: "OpenAI to Azure OpenAI CLI Tool",
           url: "https://www.npmjs.com/package/openai-to-azure-openai-cli",
           description: "CLI tool to convert OpenAI code to Azure OpenAI compatible code (curl, Python, JS/TS)."
@@ -123,11 +128,6 @@ const Projects = () => {
           title: "LangGraph MongoDB Movie Agent",
           url: "https://github.com/davidhou17/langgraph-mongodb-movie-agent",
           description: "Conversational AI agent using LangGraph that uses MongoDB for agentic RAG and memory (short and long-term)"
-        },
-        {
-          title: "Frameworkless MongoDB AI Agent",
-          url: "https://github.com/davidhou17/mongodb-ai-agent",
-          description: "Implementation of an AI agent using MongoDB without the abstractions"
         },
       ]
     },
