@@ -10,17 +10,20 @@ const About = () => {
             <div className="space-y-4">
 
             <p className="text-base text-muted-foreground leading-relaxed">
-                  I'm a writer and builder. I love helping people reach "aha" moments with technology and am 
+                  I'm a builder, operator, and writer working at the intersection of education and AI. 
+                  I love helping people reach "aha" moments with technology and am 
                   passionate about how AI will change the way we learn. I'm currenty leading 
                   product education at <strong>Decagon</strong>, where I'm building our 
                   documentation, learning resources, and curricula for our conversational AI platform.
+                  I'm involved at every part of the learning journey: from creating the AI workflows 
+                  that power our educational content to running live trainings and workshops.
                 </p>
 
               <p className="text-base text-muted-foreground leading-relaxed">
-                Previously, I was a technical writer at MongoDB,
+                Previously, I was a technical writer / developer experience engineer at MongoDB,
                 where I led documentation for our AI products. I also served as our team's AI technologist -- learning 
-                the latest and greatest in AI tooling, writing prompts to automate workflows 
-                and improve productivity, and building a culture of innovative yet responsible
+                the latest and greatest in AI tooling, building AI workflows 
+                to improve productivity, and building a culture of innovative yet responsible
                 AI use. Before that, I did technical and UI/UX writing
                 at New Relic and narrative journalism at Tsai CITY, where I wrote biweekly articles on 
                 the entrepreneurial ecosystem at Yale and New Haven. In college, I was the Co-Editor-in-Chief 
