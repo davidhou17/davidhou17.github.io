@@ -10,7 +10,7 @@ const About = () => {
             <div className="space-y-4">
 
             <p className="text-base text-muted-foreground leading-relaxed">
-                  I'm a builder, operator, and writer working at the intersection of education and AI. 
+                  I'm a builder, writer, and operator working at the intersection of education and AI. 
                   I love helping people reach "aha" moments with technology and am 
                   passionate about how AI will change the way we learn. I'm currenty leading 
                   product education at <strong>Decagon</strong>, where I'm building our 
