@@ -23,7 +23,7 @@ const About = () => {
                 Previously, I was a technical writer / developer experience engineer at MongoDB,
                 where I led documentation for our AI products. I also served as our team's AI technologist -- learning 
                 the latest and greatest in AI tooling, building AI workflows 
-                to improve productivity, and building a culture of innovative yet responsible
+                to improve productivity, and creating a culture of innovative yet responsible
                 AI use. Before that, I did technical and UI/UX writing
                 at New Relic and narrative journalism at Tsai CITY, where I wrote biweekly articles on 
                 the entrepreneurial ecosystem at Yale and New Haven. In college, I was the Co-Editor-in-Chief 
