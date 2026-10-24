@@ -174,6 +174,11 @@ const Projects = () => {
               title: "Natural Language to MongoDB",
               url: "https://www.mongodb.com/docs/manual/natural-language-to-mongodb/",
               description: "Guide to using LLMs to convert natural language into MongoDB queries."
+            },
+            {
+              title: "Jupyter Notebooks for AI Developers",
+              url: "https://github.com/mongodb/docs-notebooks",
+              description: "Collection of Jupyter notebooks for AI development."
             }
           ]
         }
