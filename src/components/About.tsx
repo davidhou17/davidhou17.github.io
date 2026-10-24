@@ -12,7 +12,11 @@ const About = () => {
             <p className="text-base text-muted-foreground leading-relaxed">
                   I'm a builder and operator working at the intersection of education and AI.
                   I believe AI will change the way we learn, and I'm passionate about
-                  building the best interface for that shift. I'm currently a product lead at{" "}
+                  building the best interface for that shift.
+                </p>
+
+              <p className="text-base text-muted-foreground leading-relaxed">
+                  I'm currently a product lead at{" "}
                   <a href="https://decagon.ai" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">
                   <strong>Decagon</strong></a>, working on our education and internal AI initiatives.
                   I work on learning products and experiences that bring product enablement into
@@ -23,14 +27,12 @@ const About = () => {
                 </p>
 
               <p className="text-base text-muted-foreground leading-relaxed">
-                Previously, I was a technical writer / developer experience engineer at MongoDB,
-                where I led documentation for our AI products. I also served as our team's AI technologist -- learning 
-                the latest and greatest in AI tooling, building AI workflows 
-                to improve productivity, and creating a culture of innovative yet responsible
-                AI use. Before that, I did technical and UI/UX writing
-                at New Relic and narrative journalism at Tsai CITY, where I wrote biweekly articles on 
-                the entrepreneurial ecosystem at Yale and New Haven. In college, I was the Co-Editor-in-Chief 
-                of the Yale Record, America's oldest humor magazine.
+                Previously, I was at <strong>MongoDB</strong>, where I led documentation and developer
+                experience for our AI products, including Voyage AI, Vector Search, and the MongoDB MCP Server.
+                I also served as my team's AI technologist: evaluating new AI tooling, building workflows
+                that made our team more productive, and creating a culture of innovative yet responsible
+                AI use. Before that, I did technical and UX writing at New Relic. In college, I was
+                Co-Editor-in-Chief of the Yale Record, America's oldest humor magazine.
               </p>
 
               <p className="text-base text-muted-foreground leading-relaxed">
