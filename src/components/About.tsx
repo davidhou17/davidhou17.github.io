@@ -10,7 +10,7 @@ const About = () => {
             <div className="space-y-4">
               <p className="text-base text-muted-foreground leading-relaxed">
                 I'm a product builder and operator working at the intersection of education and AI.
-                I believe AI will change the way we learn, and I'm passionate about building the
+                I believe AI will change the way we learn, and I'm passionate about creating the
                 best interface for that shift.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed">
@@ -25,9 +25,9 @@ const About = () => {
               </p>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Previously, I was at <strong>MongoDB</strong>, where I led documentation for our AI
-                products (Voyage AI, Vector Search, MongoDB MCP Server), building tutorials, sample
+                products (Voyage AI, Vector Search, MongoDB MCP Server), developing tutorials, sample
                 apps, and code for developers. I also served as my team's AI technologist:
-                evaluating new AI tooling, building workflows that made our team more productive,
+                evaluating new AI tooling, designing workflows that made our team more productive,
                 and creating a culture of innovative yet responsible AI use. Before that, I did
                 technical and UX writing at New Relic. In college, I was Co-Editor-in-Chief of the
                 Yale Record, America's oldest humor magazine.

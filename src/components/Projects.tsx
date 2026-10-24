@@ -7,6 +7,7 @@ type ProjectLink = {
   title: string;
   url?: string;
   description: string;
+  children?: ProjectLink[];
 };
 
 type ProjectGroup = {
@@ -76,28 +77,40 @@ const Projects = () => {
           bullets: true,
           links: [
             {
-              title: "Decagon University",
-              description: "Customer learning program, from fundamentals courses to hands-on labs inside the product."
-            },
-            {
-              title: "AI Tutor",
-              description: "Voice agent that walks customers through the platform live and answers questions in real time."
-            },
-            {
-              title: "Self-updating docs and slides",
-              description: "Agents that update docs and enablement decks as the product ships. 95% of doc updates are automated, and 10+ teams have adopted it."
-            },
-            {
               title: "Arc",
-              description: "Internal AI workspace that answers questions from company knowledge and takes action in connected tools, right in Slack."
+              description: "Internal AI workspace and productivity platform for every employee. Product surfaces include Arc in Slack, knowledge, and search & retrieval."
             },
             {
               title: "Compass",
-              description: "AI learning platform that ramps every internal team. In development."
+              description: "Agentic LMS/LXP that ramps every internal team onto Decagon. In development."
             },
             {
-              title: "Claude Tag",
-              description: "Claude in the customer team's channels, built with Anthropic, for instant answers, bug triage, and request intake."
+              title: "Decagon University",
+              description: "Customer learning hub, from traditional e-learning to AI-led applied learning. Product highlights:",
+              children: [
+                {
+                  title: "AI Tutor",
+                  description: "Voice agent that walks customers through the platform live through a VM and computer use."
+                },
+                {
+                  title: "Self-healing content",
+                  description: "Automations that update enablement content and curricula as the product ships."
+                }
+              ]
+            },
+            {
+              title: "Internal AI Tools",
+              description: "",
+              children: [
+                {
+                  title: "Claude Tag",
+                  description: "Deployed Claude Tag across Slack in collaboration with Anthropic."
+                },
+                {
+                  title: "Docs bot",
+                  description: "Internal agent that gathers context, researches, and generates internal and external documentation. 95% of product docs updates are now automated, and 10+ teams have adopted it for maintaining internal knowledge. Powered by Devin."
+                }
+              ]
             }
           ]
         }
@@ -211,8 +224,18 @@ const Projects = () => {
                         <ul className="list-disc pl-5 space-y-2 text-sm marker:text-teal">
                           {group.links.map((link, linkIndex) => (
                             <li key={linkIndex}>
-                              <span className="font-medium">{link.title}:</span>{" "}
+                              <span className="font-medium">{link.title}{link.description && ":"}</span>{" "}
                               <span className="text-muted-foreground">{link.description}</span>
+                              {link.children && (
+                                <ul className="list-[circle] pl-5 mt-1 space-y-1">
+                                  {link.children.map((child, childIndex) => (
+                                    <li key={childIndex}>
+                                      <span className="font-medium">{child.title}:</span>{" "}
+                                      <span className="text-muted-foreground">{child.description}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
                             </li>
                           ))}
                         </ul>

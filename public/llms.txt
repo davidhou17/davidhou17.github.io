@@ -1,23 +1,25 @@
 # David Hou
 
-> I'm a product builder and operator working at the intersection of education and AI. I believe AI will change the way we learn, and I'm passionate about building the best interface for that shift.
+> I'm a product builder and operator working at the intersection of education and AI. I believe AI will change the way we learn, and I'm passionate about creating the best interface for that shift.
 
 ## About
 
 I'm currently at Decagon (https://decagon.ai), building AI products that help our customers learn the platform and our internal teams work more effectively. On the customer side, I work on everything that helps users get the most out of Decagon: building interactive learning products, creating tools and automations that power our content, and running workshops and onsites for our most strategic accounts. Internally, I'm building Arc, our AI workspace and company brain, which helps everyone at Decagon ramp faster and be more productive, from learning the platform to building agents and running deployments.
 
-Previously, I was at MongoDB, where I led documentation for our AI products (Voyage AI, Vector Search, MongoDB MCP Server), building tutorials, sample apps, and code for developers. I also served as my team's AI technologist: evaluating new AI tooling, building workflows that made our team more productive, and creating a culture of innovative yet responsible AI use. Before that, I did technical and UX writing at New Relic. In college, I was Co-Editor-in-Chief of the Yale Record, America's oldest humor magazine.
+Previously, I was at MongoDB, where I led documentation for our AI products (Voyage AI, Vector Search, MongoDB MCP Server), developing tutorials, sample apps, and code for developers. I also served as my team's AI technologist: evaluating new AI tooling, designing workflows that made our team more productive, and creating a culture of innovative yet responsible AI use. Before that, I did technical and UX writing at New Relic. In college, I was Co-Editor-in-Chief of the Yale Record, America's oldest humor magazine.
 
 I live in NYC.
 
 ## 0 to 1 Product Initiatives (Decagon)
 
-- Decagon University: Customer learning program, from fundamentals courses to hands-on labs inside the product.
-- AI Tutor: Voice agent that walks customers through the platform live and answers questions in real time.
-- Self-updating docs and slides: Agents that update docs and enablement decks as the product ships. 95% of doc updates are automated, and 10+ teams have adopted it.
-- Arc: Internal AI workspace that answers questions from company knowledge and takes action in connected tools, right in Slack.
-- Compass: AI learning platform that ramps every internal team. In development.
-- Claude Tag: Claude in the customer team's channels, built with Anthropic, for instant answers, bug triage, and request intake.
+- Arc: Internal AI workspace and productivity platform for every employee. Product surfaces include Arc in Slack, knowledge, and search & retrieval.
+- Compass: Agentic LMS/LXP that ramps every internal team onto Decagon. In development.
+- Decagon University: Customer learning hub, from traditional e-learning to AI-led applied learning. Product highlights:
+  - AI Tutor: Voice agent that walks customers through the platform live through a VM and computer use.
+  - Self-healing content: Automations that update enablement content and curricula as the product ships.
+- Internal AI Tools:
+  - Claude Tag: Deployed Claude Tag across Slack in collaboration with Anthropic.
+  - Docs bot: Internal agent that gathers context, researches, and generates internal and external documentation. 95% of product docs updates are now automated, and 10+ teams have adopted it for maintaining internal knowledge. Powered by Devin.
 
 ## Personal Projects
 
