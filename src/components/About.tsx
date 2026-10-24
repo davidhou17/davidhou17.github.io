@@ -10,13 +10,15 @@ const About = () => {
             <div className="space-y-4">
 
             <p className="text-base text-muted-foreground leading-relaxed">
-                  I'm a builder, writer, and operator working at the intersection of education and AI. 
-                  I love helping people reach "aha" moments with technology and am 
-                  passionate about how AI will change the way we learn. I'm currenty leading 
-                  product education at <strong>Decagon</strong>, where I'm building our 
-                  documentation, learning resources, and curricula for our conversational AI platform.
-                  I'm involved at every part of the learning journey: from creating the AI workflows 
-                  that power our educational content to running live trainings and workshops.
+                  I'm a builder and operator working at the intersection of education and AI.
+                  I believe AI will change the way we learn permanently, and I'm passionate about
+                  building the best interface for that shift. I'm currently a product lead at
+                  <strong>Decagon</strong>, working on our education and internal AI initiatives.
+                  I work on learning products and experiences that bring product enablement into
+                  the platform, as well as Arc, our internal AI workspace and company brain.
+                  I'm also involved in the entire learning journey for our product: from ops and
+                  docs to the AI automations that power our content to leading live trainings and
+                  workshops for our biggest and most strategic accounts.
                 </p>
 
               <p className="text-base text-muted-foreground leading-relaxed">
