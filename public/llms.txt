@@ -10,7 +10,7 @@ Previously, I was at MongoDB, where I led documentation for our AI products (Voy
 
 I live in NYC.
 
-## 0 to 1 Product Initiatives (Decagon)
+## Product Work (Decagon)
 
 - Arc: Internal AI workspace and productivity platform for every employee. Product surfaces include Arc in Slack, knowledge, and search & retrieval.
 - Compass: Agentic LMS/LXP that ramps every internal team onto Decagon. In development.

@@ -70,7 +70,7 @@ const Projects = () => {
       ]
     },
     {
-      title: "0 to 1 Product Initiatives",
+      title: "Product Work",
       icon: <Rocket className="w-5 h-5 text-foreground/80" />,
       groups: [
         {
@@ -181,12 +181,9 @@ const Projects = () => {
   return (
     <section id="projects" className="section-spacing">
       <div className="container-width">
-        <h2 className="text-3xl md:text-4xl font-medium mb-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-medium mb-8 text-center">
           Work & Recent Projects
         </h2>
-        <p className="text-lg text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
-          Products, tools, and ideas I've worked on across AI and education.
-        </p>
 
         <div className="flex flex-col gap-6">
           {projectCategories.map((category, index) => (
