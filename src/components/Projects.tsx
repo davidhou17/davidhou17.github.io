@@ -146,29 +146,9 @@ const Projects = () => {
         {
           links: [
             {
-              title: "Voyage AI by MongoDB",
-              url: "https://www.mongodb.com/docs/voyageai",
-              description: "Docs for Voyage AI's embedding and reranking models."
-            },
-            {
-              title: "MongoDB MCP Server",
-              url: "https://www.mongodb.com/docs/mcp-server/",
-              description: "Docs for the MongoDB MCP Server."
-            },
-            {
-              title: "AI Framework and Platform Integrations",
-              url: "https://www.mongodb.com/docs/atlas/ai-integrations/",
-              description: "Docs for MongoDB's AI integrations."
-            },
-            {
-              title: "MongoDB Vector Search",
-              url: "https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-overview/",
-              description: "Docs for MongoDB Vector Search."
-            },
-            {
-              title: "Build AI Agents with MongoDB",
-              url: "https://www.mongodb.com/docs/atlas/atlas-vector-search/ai-agents/",
-              description: "Foundational guide to building AI agents with MongoDB."
+              title: "Jupyter Notebooks for AI Developers",
+              url: "https://github.com/mongodb/docs-notebooks",
+              description: "Collection of Jupyter notebooks for AI development."
             },
             {
               title: "Natural Language to MongoDB",
@@ -176,9 +156,29 @@ const Projects = () => {
               description: "Guide to using LLMs to convert natural language into MongoDB queries."
             },
             {
-              title: "Jupyter Notebooks for AI Developers",
-              url: "https://github.com/mongodb/docs-notebooks",
-              description: "Collection of Jupyter notebooks for AI development."
+              title: "Build AI Agents with MongoDB",
+              url: "https://www.mongodb.com/docs/atlas/atlas-vector-search/ai-agents/",
+              description: "Foundational guide to building AI agents with MongoDB."
+            },
+            {
+              title: "MongoDB MCP Server",
+              url: "https://www.mongodb.com/docs/mcp-server/",
+              description: "Docs for the MongoDB MCP Server."
+            },
+            {
+              title: "Voyage AI by MongoDB",
+              url: "https://www.mongodb.com/docs/voyageai",
+              description: "Docs for Voyage AI's embedding and reranking models."
+            },
+            {
+              title: "MongoDB Vector Search",
+              url: "https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-overview/",
+              description: "Docs for MongoDB Vector Search."
+            },
+            {
+              title: "AI Framework and Platform Integrations",
+              url: "https://www.mongodb.com/docs/atlas/ai-integrations/",
+              description: "Docs for MongoDB's AI integrations."
             }
           ]
         }
