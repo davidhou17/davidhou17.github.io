@@ -11,9 +11,10 @@ const About = () => {
 
             <p className="text-base text-muted-foreground leading-relaxed">
                   I'm a builder and operator working at the intersection of education and AI.
-                  I believe AI will change the way we learn permanently, and I'm passionate about
-                  building the best interface for that shift. I'm currently a product lead at
-                  <strong>Decagon</strong>, working on our education and internal AI initiatives.
+                  I believe AI will change the way we learn, and I'm passionate about
+                  building the best interface for that shift. I'm currently a product lead at{" "}
+                  <a href="https://decagon.ai" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-800 underline">
+                  <strong>Decagon</strong></a>, working on our education and internal AI initiatives.
                   I work on learning products and experiences that bring product enablement into
                   the platform, as well as Arc, our internal AI workspace and company brain.
                   I'm also involved in the entire learning journey for our product: from ops and
