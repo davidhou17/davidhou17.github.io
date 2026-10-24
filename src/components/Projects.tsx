@@ -11,6 +11,7 @@ type ProjectLink = {
 
 type ProjectGroup = {
   title?: string;
+  bullets?: boolean;
   links: ProjectLink[];
 };
 
@@ -72,54 +73,32 @@ const Projects = () => {
       icon: <Rocket className="w-5 h-5 text-foreground/80" />,
       groups: [
         {
-          title: "Arc",
+          bullets: true,
           links: [
             {
-              title: "Arc in Slack",
-              description: "Puts the company brain where every team already works. Ask questions across company knowledge, take action in your connected tools, and keep sensitive results private."
+              title: "Decagon University",
+              description: "Customer learning program, from fundamentals courses to hands-on labs inside the product."
             },
             {
-              title: "Arc Search & Retrieval",
-              description: "Makes institutional knowledge findable across teams, so people get grounded answers instead of digging through Slack, docs, and Notion."
+              title: "AI Tutor",
+              description: "Voice agent that walks customers through the platform live and answers questions in real time."
+            },
+            {
+              title: "Self-updating docs and slides",
+              description: "Agents that update docs and enablement decks as the product ships. 95% of doc updates are automated, and 10+ teams have adopted it."
+            },
+            {
+              title: "Arc",
+              description: "Internal AI workspace that answers questions from company knowledge and takes action in connected tools, right in Slack."
             },
             {
               title: "Compass",
-              description: "An agentic LMS that ramps all of Decagon's internal teams. In development."
+              description: "AI learning platform that ramps every internal team. In development."
             },
-          ]
-        },
-        {
-          title: "Decagon University",
-          links: [
-            {
-              title: "AI Tutor",
-              description: "A multimodal voice agent that runs product education live, using the browser to walk customers through the platform and answer questions in real time."
-            },
-            {
-              title: "Labs",
-              description: "Hands-on labs where customers complete real workflows with Duet inside the product, instead of practicing in a sandbox."
-            },
-            {
-              title: "Curricula",
-              description: "Decagon's flagship customer learning program, from Fundamentals to Deep Dives, built to make customer teams confident building on the platform."
-            },
-          ]
-        },
-        {
-          title: "Internal AI tools",
-          links: [
             {
               title: "Claude Tag",
-              description: "Brought Claude into the customer team's daily workflow in partnership with Anthropic: instant answers, bug triage, and request intake across team channels."
-            },
-            {
-              title: "Self-healing docs agent",
-              description: "Docs that keep pace with the product. 95% of doc updates are now automated, 200% more PRs are merged per month, and 10+ teams across the company have adopted it."
-            },
-            {
-              title: "Self-healing slides",
-              description: "A single source of truth for enablement decks that stays accurate as the product ships, so field teams always present current material."
-            },
+              description: "Claude in the customer team's channels, built with Anthropic, for instant answers, bug triage, and request intake."
+            }
           ]
         }
       ]
@@ -228,6 +207,16 @@ const Projects = () => {
                           {group.title}
                         </h3>
                       )}
+                      {group.bullets ? (
+                        <ul className="list-disc pl-5 space-y-2 text-sm marker:text-teal">
+                          {group.links.map((link, linkIndex) => (
+                            <li key={linkIndex}>
+                              <span className="font-medium">{link.title}:</span>{" "}
+                              <span className="text-muted-foreground">{link.description}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
                         {group.links.map((link, linkIndex) => (
                           <div key={linkIndex} className="flex items-start">
@@ -253,6 +242,7 @@ const Projects = () => {
                           </div>
                         ))}
                       </div>
+                      )}
                     </div>
                   ))}
                 </CardContent>
