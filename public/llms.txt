@@ -1,12 +1,12 @@
 # David Hou
 
-> I'm a product builder and operator working at the intersection of education and AI. I believe AI will change the way we learn, and I'm passionate about creating the best interface for that shift.
+> I'm a product builder and operator working at the intersection of education and AI. I believe AI will change the way we learn, and I'm passionate about building the best interface for that shift.
 
 ## About
 
-I'm currently at Decagon (https://decagon.ai), building AI products that help our customers learn the platform and our internal teams work more effectively. On the customer side, I work on everything that helps users get the most out of Decagon: building interactive learning products, creating tools and automations that power our content, and running workshops and onsites for our most strategic accounts. Internally, I'm building Arc, our AI workspace and company brain, which helps everyone at Decagon ramp faster and be more productive, from learning the platform to building agents and running deployments.
+I'm currently at Decagon (https://decagon.ai), building AI products that help our customers learn the platform and our internal teams work more effectively. On the customer side, I work on everything that helps users get the most out of Decagon: building interactive learning products, creating tools and automations that power our content, and running workshops and onsites for our most strategic accounts. Internally, I'm on the team building Arc, our AI workspace and company brain, which helps everyone at Decagon ramp faster and be more productive, from learning the platform to building agents and running deployments.
 
-Previously, I was at MongoDB, where I led documentation for our AI products (Voyage AI, Vector Search, MongoDB MCP Server), developing tutorials, sample apps, and code for developers. I also served as my team's AI technologist: evaluating new AI tooling, designing workflows that made our team more productive, and creating a culture of innovative yet responsible AI use. Before that, I did technical and UX writing at New Relic. In college, I was Co-Editor-in-Chief of the Yale Record, America's oldest humor magazine.
+Previously, I was at MongoDB, where I led documentation for our AI products (Voyage AI, Vector Search, MongoDB MCP Server), creating tutorials, sample apps, and code for developers. I also served as my team's AI technologist: evaluating new AI tooling, designing workflows that made our team more productive, architecting the team's prompt library (before skills existed), and fostering a culture of innovative yet responsible AI use. Before that, I did technical and UX writing at New Relic. In college, I was Co-Editor-in-Chief of the Yale Record, America's oldest humor magazine.
 
 I live in NYC.
 
@@ -23,7 +23,7 @@ I live in NYC.
 
 ## Personal Projects
 
-- [Prompt Saver MCP Server](https://github.com/davidhou17/prompt-saver-mcp): Saves successful LLM conversation threads as reusable prompts for future tasks.
+- [Prompt Saver MCP Server](https://github.com/davidhou17/prompt-saver-mcp): Saves successful LLM conversation threads as reusable prompts your agent can pull up for future tasks, with the LLM writing and maintaining them for you. Basically Agent Skills, built before Anthropic standardized it :)
 - [Local Docs Evals](https://github.com/davidhou17/local-docs-eval): A fully local evaluation suite for documentation repositories.
 - [MongoDB Education MCP Server](https://github.com/mongodb/chatbot/tree/prompt_maxxing/packages/mcp): Finalist in MongoDB's company hackathon (top 8% of submissions).
 - [LangGraph MongoDB Movie Agent](https://github.com/davidhou17/langgraph-mongodb-movie-agent): A conversational agent using MongoDB for agentic RAG and short- and long-term memory.

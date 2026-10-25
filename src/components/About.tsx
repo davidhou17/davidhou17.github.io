@@ -10,7 +10,7 @@ const About = () => {
             <div className="space-y-4">
               <p className="text-base text-muted-foreground leading-relaxed">
                 I'm a product builder and operator working at the intersection of education and AI.
-                I believe AI will change the way we learn, and I'm passionate about creating the
+                I believe AI will change the way we learn, and I'm passionate about building the
                 best interface for that shift.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed">
@@ -19,16 +19,16 @@ const About = () => {
                 on everything that helps users get the most out of Decagon: building interactive
                 learning products, creating tools and automations that power our content, and
                 running workshops and onsites for our most strategic accounts. Internally, I'm
-                building Arc, our AI workspace and company brain, which helps everyone at Decagon
+                on the team building Arc, our AI workspace and company brain, which helps everyone at Decagon
                 ramp faster and be more productive, from learning the platform to building agents
                 and running deployments.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Previously, I was at <strong>MongoDB</strong>, where I led documentation for our AI
-                products (Voyage AI, Vector Search, MongoDB MCP Server), developing tutorials, sample
+                products (Voyage AI, Vector Search, MongoDB MCP Server), creating tutorials, sample
                 apps, and code for developers. I also served as my team's AI technologist:
                 evaluating new AI tooling, designing workflows that made our team more productive,
-                and creating a culture of innovative yet responsible AI use. Before that, I did
+                architecting the team's prompt library (before skills existed), and fostering a culture of innovative yet responsible AI use. Before that, I did
                 technical and UX writing at New Relic. In college, I was Co-Editor-in-Chief of the
                 Yale Record, America's oldest humor magazine.
               </p>

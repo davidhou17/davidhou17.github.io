@@ -48,7 +48,7 @@ const Projects = () => {
             {
               title: "Prompt Saver MCP Server",
               url: "https://github.com/davidhou17/prompt-saver-mcp",
-              description: "Saves successful LLM conversation threads as reusable prompts for future tasks."
+              description: "Saves successful LLM conversation threads as reusable prompts your agent can pull up for future tasks, with the LLM writing and maintaining them for you. Basically Agent Skills, built before Anthropic standardized it :)"
             },
             {
               title: "Local Docs Evals",
@@ -78,7 +78,7 @@ const Projects = () => {
           links: [
             {
               title: "Arc",
-              description: "Internal AI workspace and productivity platform for every employee. Product surfaces include Arc in Slack, knowledge, and search & retrieval."
+              description: "Internal AI workspace and productivity platform for every employee. I work across Arc in Slack, knowledge, and search & retrieval."
             },
             {
               title: "Compass",
