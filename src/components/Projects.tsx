@@ -48,7 +48,7 @@ const Projects = () => {
             {
               title: "Prompt Saver MCP Server",
               url: "https://github.com/davidhou17/prompt-saver-mcp",
-              description: "Saves successful LLM conversation threads as reusable prompts your agent can pull up for future tasks, with the LLM writing and maintaining them for you. Basically Agent Skills, built before Anthropic standardized it :)"
+              description: "Saves successful LLM conversation threads as reusable prompts your agent can pull up for future tasks, with your agent writing and maintaining them for you. Basically Agent Skills, built before Anthropic standardized it :)"
             },
             {
               title: "Local Docs Evals",

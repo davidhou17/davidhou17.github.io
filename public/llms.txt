@@ -23,7 +23,7 @@ I live in NYC.
 
 ## Personal Projects
 
-- [Prompt Saver MCP Server](https://github.com/davidhou17/prompt-saver-mcp): Saves successful LLM conversation threads as reusable prompts your agent can pull up for future tasks, with the LLM writing and maintaining them for you. Basically Agent Skills, built before Anthropic standardized it :)
+- [Prompt Saver MCP Server](https://github.com/davidhou17/prompt-saver-mcp): Saves successful LLM conversation threads as reusable prompts your agent can pull up for future tasks, with your agent writing and maintaining them for you. Basically Agent Skills, built before Anthropic standardized it :)
 - [Local Docs Evals](https://github.com/davidhou17/local-docs-eval): A fully local evaluation suite for documentation repositories.
 - [MongoDB Education MCP Server](https://github.com/mongodb/chatbot/tree/prompt_maxxing/packages/mcp): Finalist in MongoDB's company hackathon (top 8% of submissions).
 - [LangGraph MongoDB Movie Agent](https://github.com/davidhou17/langgraph-mongodb-movie-agent): A conversational agent using MongoDB for agentic RAG and short- and long-term memory.
