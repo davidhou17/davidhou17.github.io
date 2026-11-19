@@ -117,10 +117,26 @@ const Projects = () => {
       ]
     },
     {
-      title: "Speaking",
+      title: "Speaking & Thought Leadership",
       icon: <Mic className="w-5 h-5 text-foreground/80" />,
       groups: [
         {
+          title: "Thought leadership on agent / company knowledge",
+          links: [
+            {
+              title: "State of Knowledge report 2026",
+              url: "https://www.mintlify.com/state-of-knowledge",
+              description: "Featured in the State of Knowledge Report (2026) alongside leaders from Anthropic and Hubspot."
+            },
+            {
+              title: "Case Study",
+              url: "https://www.mintlify.com/customers/decagon",
+              description: "Decagon case study in collaboration with Mintlify on automating knowledge and context management."
+            }
+          ]
+        },
+        {
+          title: "Talks",
           links: [
             {
               title: "AI the Docs 2025",
