@@ -51,9 +51,6 @@
     @apply text-muted no-underline hover:text-foreground;
   }
 
-  .fade-in {
-    animation: fade-in 500ms ease-out both;
-  }
 }
 
 /* Entry hook: terminal prompt types a command, runs it, then fades away to reveal the page. */

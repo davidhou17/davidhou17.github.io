@@ -22,7 +22,7 @@ const jsonLd = {
       "@type": "ProfilePage",
       "@id": `${site.url}#profile`,
       url: site.url,
-      name: site.title,
+      name: site.name,
       description: site.description,
       dateModified: today,
       inLanguage: "en",
@@ -58,9 +58,21 @@ const jsonLdTag = `<script type="application/ld+json">${JSON.stringify(jsonLd).r
 
 // The page has no interactive parts, so production ships static HTML + CSS only.
 // To add client-side interactivity later, delete the script-stripping below and the page will hydrate.
+// <head> metadata, generated from src/content.ts so it can't drift from the page.
+const esc = (v) => v.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+const headTags = [
+  `<title>${esc(site.title)}</title>`,
+  `<meta name="description" content="${esc(site.description)}" />`,
+  `<meta property="og:title" content="${esc(site.title)}" />`,
+  `<meta property="og:description" content="${esc(site.summary)}" />`,
+  `<meta name="twitter:title" content="${esc(site.title)}" />`,
+  `<meta name="twitter:description" content="${esc(site.summary)}" />`,
+].join("\n    ");
+
 const indexPath = resolve(dist, "index.html");
 const html = readFileSync(indexPath, "utf8")
   .replace("<!--app-html-->", render())
+  .replace("<!--head-->", headTags)
   .replace("<!--json-ld-->", jsonLdTag)
   .replace(/\s*<script type="module"[^>]*><\/script>/g, "")
   .replace(/\s*<link rel="modulepreload"[^>]*>/g, "");

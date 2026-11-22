@@ -23,6 +23,7 @@ export type Paragraph = Array<string | { text: string; url: string; subtle?: boo
 export const site = {
   url: "https://davidhou17.github.io/",
   name: "David Hou",
+  /** Page <title>, og:title and twitter:title. */
   title: "David Hou",
   tagline: "Product builder and operator working at the intersection of education and AI.",
   /** Third-person one-liner for structured data and social previews. */
@@ -34,7 +35,6 @@ export const site = {
   email: "dhou.david@gmail.com",
   image: "https://davidhou17.github.io/og.png",
   alumniOf: ["Yale University"],
-  formerEmployers: ["MongoDB", "New Relic"],
   knowsAbout: [
     "Product management",
     "AI products",
