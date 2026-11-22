@@ -96,26 +96,14 @@
   }
 }
 .intro-run {
-  @apply mt-2 flex items-baseline gap-2 pl-4 leading-5;
-  animation: print-line 1ms steps(1) both;
+  @apply mt-2 flex items-center gap-2 pl-4 leading-5;
 }
-/* Status words share one grid cell; each is visible only during its own window. */
-.status-word.shimmer {
-  grid-area: 1 / 1;
-  visibility: hidden;
-  animation-name: shimmer, status-window;
-  animation-timing-function: linear, steps(1);
-  animation-iteration-count: infinite, 1;
-  animation-fill-mode: none, forwards;
+/* Status words: a one-line window over a column that steps up (keyframes in Intro.tsx). */
+.status-window {
+  @apply block h-5 overflow-hidden leading-5;
 }
-@keyframes status-window {
-  0%,
-  99% {
-    visibility: visible;
-  }
-  100% {
-    visibility: hidden;
-  }
+.status-track {
+  @apply block;
 }
 /* Claude Code–style spinner: glyphs stacked in one cell, one visible at a time.
    Frame delays start at "Enter", so nothing shows before the status line. */
@@ -144,24 +132,6 @@
   background-clip: text;
   color: transparent;
   animation: shimmer 1.2s linear infinite;
-}
-/* Status words share one grid cell; each is visible only during its own window. */
-.status-word.shimmer {
-  grid-area: 1 / 1;
-  visibility: hidden;
-  animation-name: shimmer, status-window;
-  animation-timing-function: linear, steps(1);
-  animation-iteration-count: infinite, 1;
-  animation-fill-mode: none, forwards;
-}
-@keyframes status-window {
-  0%,
-  99% {
-    visibility: visible;
-  }
-  100% {
-    visibility: hidden;
-  }
 }
 @keyframes shimmer {
   from { background-position: 100% 0; }
@@ -196,8 +166,12 @@
 .agent-view {
   display: none;
 }
+/* Hide without display:none, so the page's build animation doesn't replay on switching back. */
 #view-agent:checked ~ .human-view {
-  display: none;
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
 }
 #view-agent:checked ~ .agent-view {
   display: block;
@@ -246,6 +220,9 @@
 @keyframes print-line {
   from {
     visibility: hidden;
+  }
+  to {
+    visibility: visible;
   }
 }
 @keyframes blink {

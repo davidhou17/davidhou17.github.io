@@ -33,6 +33,20 @@ const WORD_MS = 750;
 const INTRO_OUT = ENTER_AT + STATUS_WORDS.length * WORD_MS;
 export const PAGE_IN = INTRO_OUT + 120;
 
+// Status words sit in a one-line window over a column that starts on a blank line.
+// At "Enter" it steps to the first word, then up one line per word. Only margin-top
+// animates, so no word is ever hidden-but-painted (stacked words overlapped in Safari).
+const LINE_REM = 1.25;
+const ROLL_MS = (STATUS_WORDS.length - 1) * WORD_MS + 1;
+const statusKeyframes = `@keyframes status-roll {
+${STATUS_WORDS.map(
+  (_, i) =>
+    `  ${(((i * WORD_MS) / ROLL_MS) * 100).toFixed(3)}% { margin-top: ${-(i + 1) * LINE_REM}rem; animation-timing-function: step-end; }`,
+).join("\n")}
+  100% { margin-top: ${-STATUS_WORDS.length * LINE_REM}rem; }
+}
+.status-track { animation: status-roll ${ROLL_MS}ms ${ENTER_AT}ms forwards; }`;
+
 const ms = (name: string, value: number) => ({ [name]: `${value}ms` }) as CSSProperties;
 
 // Claude Code–style spinner: glyphs stacked in one cell, each shown for 1/6 of the cycle.
@@ -57,21 +71,18 @@ export const Intro = () => (
         <span className="cmd-text">{COMMAND}</span>
         <span className="type-cursor" style={ms("--cursor-out", ENTER_AT)} />
       </div>
-      <div className="intro-run" style={{ animationDelay: `${ENTER_AT}ms` }}>
+      <div className="intro-run">
         <Spinner />
-        <span className="grid">
-          {STATUS_WORDS.map((word, i) => (
-            <span
-              key={word}
-              className="status-word shimmer"
-              style={{
-                animationDelay: `0ms, ${ENTER_AT + i * WORD_MS}ms`,
-                animationDuration: `1.2s, ${i === STATUS_WORDS.length - 1 ? WORD_MS + 600 : WORD_MS}ms`,
-              }}
-            >
-              {word}
-            </span>
-          ))}
+        <style>{statusKeyframes}</style>
+        <span className="status-window">
+          <span className="status-track">
+            <span className="block">&nbsp;</span>
+            {STATUS_WORDS.map((word) => (
+              <span key={word} className="shimmer block">
+                {word}
+              </span>
+            ))}
+          </span>
         </span>
       </div>
     </div>
