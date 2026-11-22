@@ -56,6 +56,131 @@
   }
 }
 
+/* Entry hook: terminal prompt types a command, runs it, then fades away to reveal the page. */
+.intro {
+  @apply fixed inset-0 z-50 bg-background;
+  animation: intro-out 350ms ease-in var(--intro-out) forwards;
+}
+@keyframes intro-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.01);
+  }
+}
+/* Typed command: width grows one character per key (keyframes generated in Home.tsx). */
+.cmd-text {
+  @apply inline-block overflow-hidden whitespace-pre align-bottom;
+}
+/* After "Enter", the command line turns gray. */
+.intro-cmd {
+  @apply text-foreground;
+  animation: to-gray 300ms ease-out var(--enter) forwards;
+}
+.intro-prompt {
+  @apply text-[#7ee2a8];
+  animation: to-gray 300ms ease-out var(--enter) forwards;
+}
+@keyframes to-gray {
+  to {
+    color: hsl(var(--muted) / 0.7);
+  }
+}
+.type-cursor {
+  @apply ml-0.5 inline-block h-[1.1em] w-[7px] translate-y-[3px] bg-foreground/80;
+  animation:
+    blink 0.6s steps(1) infinite,
+    cursor-out 1ms linear var(--cursor-out) forwards;
+}
+@keyframes cursor-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.intro-run {
+  @apply mt-2 flex items-baseline gap-2 pl-4 leading-5;
+  animation: print-line 1ms steps(1) both;
+}
+/* Status words share one grid cell; each is visible only during its own window. */
+.status-word.shimmer {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  animation-name: shimmer, status-window;
+  animation-timing-function: linear, steps(1);
+  animation-iteration-count: infinite, 1;
+  animation-fill-mode: none, forwards;
+}
+@keyframes status-window {
+  0%,
+  99% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+/* Claude Code–style spinner: glyphs stacked in one cell, one visible at a time.
+   Frame delays start at "Enter", so nothing shows before the status line. */
+.spinner {
+  @apply grid w-3 text-center text-[#4fc4c4];
+}
+.spinner > span {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  animation: spin-frame 900ms steps(1) infinite;
+}
+@keyframes spin-frame {
+  0% {
+    visibility: visible;
+  }
+  16.6% {
+    visibility: hidden;
+  }
+}
+
+/* Shimmering status text. */
+.shimmer {
+  background: linear-gradient(90deg, hsl(var(--muted)) 0%, hsl(var(--muted)) 40%, hsl(var(--fg)) 50%, hsl(var(--muted)) 60%, hsl(var(--muted)) 100%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 1.2s linear infinite;
+}
+/* Status words share one grid cell; each is visible only during its own window. */
+.status-word.shimmer {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  animation-name: shimmer, status-window;
+  animation-timing-function: linear, steps(1);
+  animation-iteration-count: infinite, 1;
+  animation-fill-mode: none, forwards;
+}
+@keyframes status-window {
+  0%,
+  99% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@keyframes shimmer {
+  from { background-position: 100% 0; }
+  to { background-position: 0% 0; }
+}
+
+/* Generated page build: each block pops in at its own delay. */
+.chunk {
+  animation: chunk-in 90ms ease-out both;
+}
+@keyframes chunk-in {
+  from {
+    opacity: 0;
+  }
+}
+
 /* Human / Agent view toggle (CSS-only: radio inputs precede header and both views). */
 .view-toggle {
   @apply ml-auto flex items-center gap-1.5 font-mono text-xs text-line;
@@ -156,13 +281,16 @@ details[open]::details-content {
   html {
     scroll-behavior: auto;
   }
-  .fade-in,
+  .chunk,
   .md-line,
   #view-agent:checked ~ .agent-view {
     animation: none;
   }
   .cursor {
     animation: none;
+  }
+  .intro {
+    display: none;
   }
   *,
   *::before,

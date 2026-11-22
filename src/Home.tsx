@@ -3,7 +3,7 @@ import { about, sections, site, type Item, type Paragraph } from "./content";
 import { toMarkdown } from "./llms";
 
 // All interactivity is CSS/HTML-only (Human/Agent toggle via radio inputs, <details> sections,
-// hover, focus, load fade-in),
+// hover, focus, terminal intro + streamed page build),
 // so the prerendered page works with zero JavaScript.
 
 const isExternal = (href: string) => href.startsWith("http");
@@ -26,17 +26,6 @@ const Arrow = () => (
     ↗
   </span>
 );
-
-const renderParagraph = (p: Paragraph) =>
-  p.map((part, i) =>
-    typeof part === "string" ? (
-      part
-    ) : (
-      <Link key={i} href={part.url} className={part.subtle ? "subtle-link" : undefined}>
-        {part.text}
-      </Link>
-    ),
-  );
 
 const ItemBody = ({ item }: { item: Item }) => (
   <>
@@ -129,15 +118,131 @@ const ViewToggle = () => (
   </div>
 );
 
-const fadeIn = (step: number): CSSProperties => ({ animationDelay: `${step * 60}ms` });
+// Entry hook: a terminal prompt types "/build-website", runs it (the line turns gray),
+// cycles through three status words, then the page opens.
+const COMMAND = "/build-website";
+const STATUS_WORDS = ["Thinking…", "Learning…", "Applying…"];
+const TYPE_START = 200;
+
+// Seeded randomness, so server and client render the same timings.
+const seeded = (seed: number) => () => {
+  seed = (seed + 0x6d2b79f5) | 0;
+  let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+  t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+};
+
+// Human-ish typing: uneven gaps per key, with short hesitations after "/" and "-".
+const typeRand = seeded(3);
+const keyTimes = (() => {
+  let t = TYPE_START;
+  return [...COMMAND].map((ch, i) => {
+    const prev = COMMAND[i - 1];
+    t += i === 0 ? 0 : 35 + Math.round(typeRand() * 90) + (prev === "/" || prev === "-" ? 120 : 0);
+    return t;
+  });
+})();
+const ENTER_AT = keyTimes[keyTimes.length - 1] + 220;
+
+// The command is monospace, so typing is a width that grows 1ch per key. The cursor sits right
+// after it and follows each letter. Keyframes are generated so each key lands at its own time.
+const TYPE_SPAN = keyTimes[keyTimes.length - 1] - TYPE_START + 1;
+const typingKeyframes = `@keyframes type-cmd {
+  0% { width: 0ch; animation-timing-function: step-end; }
+${keyTimes
+  .map((t, i) => `  ${(((t - TYPE_START + 1) / TYPE_SPAN) * 100).toFixed(3)}% { width: ${i + 1}ch; animation-timing-function: step-end; }`)
+  .join("\n")}
+}
+.cmd-text { animation: type-cmd ${TYPE_SPAN}ms ${TYPE_START - 1}ms both; }`;
+const WORD_MS = 750;
+const INTRO_OUT = ENTER_AT + STATUS_WORDS.length * WORD_MS;
+const PAGE_IN = INTRO_OUT + 120;
+
+const ms = (name: string, value: number) => ({ [name]: `${value}ms` }) as CSSProperties;
+
+// Claude Code–style spinner: glyphs stacked in one cell, each shown for 1/6 of the cycle.
+const SPINNER = ["·", "✢", "✳", "✶", "✻", "✽"];
+const SPIN_MS = 900;
+const Spinner = () => (
+  <span className="spinner">
+    {SPINNER.map((g, i) => (
+      <span key={i} style={{ animationDelay: `${ENTER_AT + (i * SPIN_MS) / SPINNER.length}ms` }}>
+        {g}
+      </span>
+    ))}
+  </span>
+);
+
+const Intro = () => (
+  <div className="intro" aria-hidden="true" style={ms("--intro-out", INTRO_OUT)}>
+    <div className="mx-auto max-w-2xl px-6 pt-16 font-mono text-sm sm:pt-24">
+      <div className="intro-cmd" style={ms("--enter", ENTER_AT)}>
+        <span className="intro-prompt">❯ </span>
+        <style>{typingKeyframes}</style>
+        <span className="cmd-text">{COMMAND}</span>
+        <span className="type-cursor" style={ms("--cursor-out", ENTER_AT)} />
+      </div>
+      <div className="intro-run" style={{ animationDelay: `${ENTER_AT}ms` }}>
+        <Spinner />
+        <span className="grid">
+          {STATUS_WORDS.map((word, i) => (
+            <span
+              key={word}
+              className="status-word shimmer"
+              style={{
+                animationDelay: `0ms, ${ENTER_AT + i * WORD_MS}ms`,
+                animationDuration: `1.2s, ${i === STATUS_WORDS.length - 1 ? WORD_MS + 600 : WORD_MS}ms`,
+              }}
+            >
+              {word}
+            </span>
+          ))}
+        </span>
+      </div>
+    </div>
+  </div>
+);
+
+// Generated build: the page appears one block at a time, at irregular intervals,
+// like an LLM producing output. Seeded so server and client render the same timings.
+const at = (ms: number): CSSProperties => ({ animationDelay: `${ms}ms` });
+
+const rand = seeded(17);
+const gap = () => 70 + Math.round(rand() * 230); // 70–300ms between blocks
+
+const blockTimes = (count: number, start: number) => {
+  const times: number[] = [];
+  let t = start;
+  for (let i = 0; i < count; i++) times.push((t += i === 0 ? 0 : gap()));
+  return times;
+};
+
+// Order: header, each bio paragraph, each section, footer.
+const times = blockTimes(1 + about.length + sections.length + 1, PAGE_IN);
+const HEADER_AT = times[0];
+const paragraphAt = (i: number) => times[1 + i];
+const sectionAt = (i: number) => times[1 + about.length + i];
+const FOOTER_AT = times[times.length - 1];
+
+const renderParagraph = (p: Paragraph) =>
+  p.map((part, i) =>
+    typeof part === "string" ? (
+      part
+    ) : (
+      <Link key={i} href={part.url} className={part.subtle ? "subtle-link" : undefined}>
+        {part.text}
+      </Link>
+    ),
+  );
 
 const linkedIn = site.links.find((l) => l.label === "LinkedIn")!.url;
 
 const Home = () => (
   <div className="mx-auto max-w-2xl px-6 py-16 sm:py-24">
+    <Intro />
     <input type="radio" name="view" id="view-human" defaultChecked className="sr-only" />
     <input type="radio" name="view" id="view-agent" className="sr-only" />
-    <header className="fade-in mb-8" style={fadeIn(0)}>
+    <header className="chunk mb-8" style={at(HEADER_AT)}>
       <div className="flex items-center gap-4">
         <Link href={linkedIn} className="shrink-0 rounded-full no-underline">
           <img
@@ -154,22 +259,24 @@ const Home = () => (
     </header>
 
     <main className="human-view space-y-12">
-      <section aria-labelledby="about" className="fade-in space-y-4" style={fadeIn(1)}>
+      <section aria-labelledby="about" className="space-y-4">
         <h2 id="about" className="sr-only">
           About
         </h2>
         {about.map((p, i) => (
-          <p key={i}>{renderParagraph(p)}</p>
+          <p key={i} className="chunk" style={at(paragraphAt(i))}>
+            {renderParagraph(p)}
+          </p>
         ))}
       </section>
 
-      <div className="border-t border-line">
+      <div className="chunk border-t border-line" style={at(sectionAt(0))}>
         {sections.map((section, i) => (
           <details
             key={section.id}
             id={section.id}
-            className="fade-in group/section border-b border-line"
-            style={fadeIn(i + 2)}
+            className="chunk group/section border-b border-line"
+            style={at(sectionAt(i))}
           >
             <summary className="flex cursor-pointer list-none items-center gap-3 py-4 [&::-webkit-details-marker]:hidden">
               <h2 className="font-medium text-foreground">{section.title}</h2>
@@ -196,8 +303,8 @@ const Home = () => (
     <AgentView />
 
     <footer
-      className="fade-in mt-20 flex flex-wrap gap-x-5 gap-y-1 border-t border-line pt-6 text-sm"
-      style={fadeIn(sections.length + 2)}
+      className="chunk mt-20 flex flex-wrap gap-x-5 gap-y-1 border-t border-line pt-6 text-sm"
+      style={at(FOOTER_AT)}
     >
       {site.links.map((l) => (
         <Link key={l.label} href={l.url} className="nav-link group">
