@@ -2,119 +2,171 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Minimalist design system for technical writer portfolio */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto+Condensed:wght@400;500;600;700&display=swap');
-
 @layer base {
+  /* Dark only. */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 8.9% 9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 220 8.9% 9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 8.9% 9%;
-
-    --primary: 220 8.9% 9%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 220 8.9% 9%;
-
-    --muted: 210 40% 96%;
-    --muted-foreground: 220 5.9% 47.9%;
-
-    --accent: 180 40% 70%;
-    --accent-foreground: 220 8.9% 9%;
-
-    --teal: 180 40% 70%;
-    --teal-light: 180 30% 85%;
-    --teal-dark: 180 50% 55%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 180 40% 70%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    color-scheme: dark;
+    --bg: 0 0% 7%;
+    --fg: 0 0% 96%;
+    --text: 0 0% 80%;
+    --muted: 0 0% 58%;
+    --line: 0 0% 22%;
+    --hover: 0 0% 12%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
+  html {
+    @apply bg-background text-base leading-7 antialiased;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground font-sans font-light antialiased;
+    @apply text-body;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-medium tracking-tight;
+  a {
+    @apply rounded-sm text-foreground underline decoration-line underline-offset-[3px] transition-colors hover:decoration-current;
   }
 
-  .section-spacing {
-    @apply py-16 md:py-24;
+  a:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-foreground;
   }
 
-  .container-width {
-    @apply max-w-4xl mx-auto px-6 md:px-8;
+  ::selection {
+    @apply bg-foreground text-background;
+  }
+}
+
+@layer components {
+  /* Linked list item: whole row is the hit target. */
+  .row {
+    @apply block rounded-md px-3 py-2 no-underline transition-colors hover:bg-hover;
+  }
+
+  /* Reads as plain text; reveals itself as a link on hover or keyboard focus. */
+  .subtle-link {
+    @apply text-inherit no-underline hover:text-foreground hover:underline focus-visible:underline;
+  }
+
+  .nav-link {
+    @apply text-muted no-underline hover:text-foreground;
+  }
+
+  .fade-in {
+    animation: fade-in 500ms ease-out both;
+  }
+}
+
+/* Human / Agent view toggle (CSS-only: radio inputs precede header and both views). */
+.view-toggle {
+  @apply ml-auto flex items-center gap-1.5 font-mono text-xs text-line;
+}
+.view-toggle label {
+  @apply cursor-pointer text-muted/70 transition-colors hover:text-foreground;
+}
+#view-human:checked ~ header label[for="view-human"],
+#view-agent:checked ~ header label[for="view-agent"] {
+  @apply text-foreground underline decoration-line underline-offset-4;
+}
+#view-human:focus-visible ~ header label[for="view-human"],
+#view-agent:focus-visible ~ header label[for="view-agent"] {
+  @apply outline outline-2 outline-offset-2 outline-foreground;
+}
+.agent-view {
+  display: none;
+}
+#view-agent:checked ~ .human-view {
+  display: none;
+}
+#view-agent:checked ~ .agent-view {
+  display: block;
+  animation: fade-in 300ms ease-out both;
+}
+
+/* Terminal: dark in both color schemes. */
+.terminal {
+  @apply overflow-hidden rounded-xl border border-white/10 bg-[#0b0b0c] text-[#c9c9c9] shadow-2xl shadow-black/20;
+}
+.terminal-bar {
+  @apply flex items-center gap-3 border-b border-white/10 px-4 py-2.5 font-mono text-xs text-[#8a8a8a];
+}
+.terminal-bar .dots {
+  @apply flex gap-1.5;
+}
+.terminal-bar .dots i {
+  @apply block h-2.5 w-2.5 rounded-full bg-white/15;
+}
+.terminal-body {
+  @apply max-h-[70vh] overflow-auto whitespace-pre-wrap break-words p-4 font-mono text-[12.5px] leading-6;
+}
+.md-line {
+  animation: print-line 1ms steps(1) both;
+}
+.md-h1 {
+  @apply font-semibold text-white;
+}
+.md-h2 {
+  @apply font-semibold text-[#7ee2a8];
+}
+.md-quote {
+  @apply italic text-[#a0a0a0];
+}
+.md-link {
+  @apply text-[#9ec5ff];
+}
+.md-url {
+  @apply text-[#5f6b7a];
+}
+.cursor {
+  @apply ml-0.5 inline-block h-4 w-2 translate-y-[3px] bg-[#7ee2a8];
+  animation: print-line 1ms steps(1) both, blink 1s steps(1) infinite;
+}
+
+@keyframes print-line {
+  from {
+    visibility: hidden;
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Animate <details> open/close where supported (Chromium 131+); other browsers toggle instantly. */
+:root {
+  interpolate-size: allow-keywords;
+}
+details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition: block-size 250ms ease, content-visibility 250ms allow-discrete;
+}
+details[open]::details-content {
+  block-size: auto;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .fade-in,
+  .md-line,
+  #view-agent:checked ~ .agent-view {
+    animation: none;
+  }
+  .cursor {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
   }
 }

@@ -1,16 +1,5 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
 
+# Plain-text version of this site for LLMs and agents: https://davidhou17.github.io/llms.txt
 Sitemap: https://davidhou17.github.io/sitemap.xml
