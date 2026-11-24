@@ -42,11 +42,6 @@
     @apply block rounded-md px-3 py-2 no-underline transition-colors hover:bg-hover;
   }
 
-  /* Reads as plain text; reveals itself as a link on hover or keyboard focus. */
-  .subtle-link {
-    @apply text-inherit no-underline hover:text-foreground hover:underline focus-visible:underline;
-  }
-
   .nav-link {
     @apply text-muted no-underline hover:text-foreground;
   }

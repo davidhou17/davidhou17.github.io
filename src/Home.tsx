@@ -74,7 +74,7 @@ const renderParagraph = (p: Paragraph) =>
     typeof part === "string" ? (
       part
     ) : (
-      <Link key={i} href={part.url} className={part.subtle ? "subtle-link" : undefined}>
+      <Link key={i} href={part.url}>
         {part.text}
       </Link>
     ),
