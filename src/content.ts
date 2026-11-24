@@ -60,10 +60,10 @@ export const about: Paragraph[] = [
   [
     "I'm currently at ",
     { text: "Decagon", url: "https://decagon.ai" },
-    ", building AI that helps customers learn the platform and helps our teams work better. Externally, I build interactive learning products, deploy tools that automate content and curricula, and go onsite with our biggest customers so I know what to build next. Internally, I'm on the team building Arc, our AI workspace and company brain, which helps everyone at Decagon ramp faster, build agents, and run deployments.",
+    ", building AI that helps customers learn the platform and helps our teams work better. Externally, I build interactive learning products, deploy tools that automate content and curricula, and go onsite with our biggest customers to learn what to build next. Internally, I'm on the team building Arc, our AI workspace and company brain, which helps everyone at Decagon ramp faster, build agents, and run deployments.",
   ],
   [
-    "Previously, I was at MongoDB, where I led documentation for our AI products and architected the team's first prompt library. It's also where I'll forever claim I built ",
+    "Previously, I was at MongoDB, where I led documentation for our AI products and architected the team's prompt library. It's also where I'll forever claim I built ",
     { text: "skills", url: "#personal-projects" },
     " before Anthropic did. I currently live in NYC. Depending on the season, you can find me running on Roosevelt Island, bird watching in the Ramble, or skating at World Ice Arena.",
   ],
