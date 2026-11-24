@@ -3,7 +3,7 @@
 import { about, sections, site, type Item, type Paragraph } from "./content";
 
 const paragraphMd = (p: Paragraph) =>
-  p.map((part) => (typeof part === "string" ? part : `[${part.text}](${part.url})`)).join("");
+  p.map((part) => (typeof part === "string" ? part : `[${part.text}](${new URL(part.url, site.url)})`)).join("");
 
 const itemLine = (item: Item, depth = 0): string => {
   const title = item.url ? `[${item.title}](${item.url})` : item.title;

@@ -64,7 +64,7 @@ export const about: Paragraph[] = [
   ],
   [
     "Previously, I was at MongoDB, where I led documentation for our AI products and architected the team's first prompt library. It's also where I'll forever claim I built ",
-    { text: "skills", url: "https://claude.com/skills" },
+    { text: "skills", url: "#personal-projects" },
     " before Anthropic did. I currently live in NYC. Depending on the season, you can find me running on Roosevelt Island, bird watching in the Ramble, or skating at World Ice Arena.",
   ],
 ];
@@ -132,7 +132,7 @@ export const sections: Section[] = [
         title: "Prompt Saver MCP Server",
         url: "https://github.com/davidhou17/prompt-saver-mcp",
         description:
-          "Saves successful LLM conversation threads as reusable prompts your agent can pull up for future tasks, with your agent writing and maintaining them for you. Basically Agent Skills, built before Anthropic standardized it :)",
+          "Saves successful LLM conversation threads as reusable prompts your agent can pull up for future tasks, with your agent writing and maintaining them for you (skills before skills existed).",
       },
       {
         title: "Local Docs Evals",
@@ -148,6 +148,36 @@ export const sections: Section[] = [
         title: "LangGraph MongoDB Movie Agent",
         url: "https://github.com/davidhou17/langgraph-mongodb-movie-agent",
         description: "A conversational agent using MongoDB for agentic RAG and short- and long-term memory.",
+      },
+    ],
+  },
+  {
+    id: "thought-leadership",
+    title: "Thought Leadership",
+    subtitle: "On agent and company knowledge.",
+    items: [
+      {
+        title: "State of Knowledge Report 2026",
+        url: "https://www.mintlify.com/state-of-knowledge",
+        description:
+          "Featured alongside leaders from Anthropic and HubSpot.",
+      },
+      {
+        title: "Decagon \u00d7 Mintlify case study",
+        url: "https://www.mintlify.com/customers/decagon",
+        description:
+          "How Decagon automates knowledge and context management with Mintlify.",
+      },
+    ],
+  },
+  {
+    id: "speaking",
+    title: "Speaking",
+    items: [
+      {
+        title: "AI the Docs 2025",
+        url: "https://pronovix.com/event/ai-the-docs-2025/david-hou",
+        description: "“Rethinking Docs as Code in the Age of Vibe Coding”",
       },
     ],
   },
@@ -190,36 +220,6 @@ export const sections: Section[] = [
         title: "AI Framework and Platform Integrations",
         url: "https://www.mongodb.com/docs/atlas/ai-integrations/",
         description: "Docs for MongoDB's AI integrations.",
-      },
-    ],
-  },
-  {
-    id: "thought-leadership",
-    title: "Thought Leadership",
-    subtitle: "On agent and company knowledge.",
-    items: [
-      {
-        title: "State of Knowledge Report 2026",
-        url: "https://www.mintlify.com/state-of-knowledge",
-        description:
-          "Featured alongside leaders from Anthropic and HubSpot.",
-      },
-      {
-        title: "Decagon \u00d7 Mintlify case study",
-        url: "https://www.mintlify.com/customers/decagon",
-        description:
-          "How Decagon automates knowledge and context management with Mintlify.",
-      },
-    ],
-  },
-  {
-    id: "speaking",
-    title: "Speaking",
-    items: [
-      {
-        title: "AI the Docs 2025",
-        url: "https://pronovix.com/event/ai-the-docs-2025/david-hou",
-        description: "“Rethinking Docs as Code in the Age of Vibe Coding”",
       },
     ],
   },
