@@ -61,17 +61,12 @@ export const about: Paragraph[] = [
   [
     "I'm currently at ",
     { text: "Decagon", url: "https://decagon.ai" },
-    ", building AI that helps our customers learn the platform and our internal teams work more effectively. On the customer side, I build interactive learning products, deploy tools and automations that automate content and curricula, and lead onsites with our biggest customers so I know what to build next. Internally, I'm on the team building Arc, our AI workspace and company brain, which helps everyone at Decagon ramp faster and be more productive, from learning the platform to building agents and running deployments.",
+    ", building AI that helps customers learn the platform and helps our teams work better. Externally, I build interactive learning products, deploy tools that automate content and curricula, and lead onsites with our biggest customers so I know what to build next. Internally, I'm on the team building Arc, our AI workspace and company brain, which helps everyone at Decagon ramp faster, build agents, and run deployments.",
   ],
   [
-    "Previously, I was at MongoDB, where I led documentation for our AI products (Voyage AI, Vector Search, MongoDB MCP Server) and served as my team's AI technologist, architecting the team's prompt library (before ",
+    "Previously, I was at MongoDB, where I led documentation for our AI products and architected the team's first prompt library. It's also where I'll forever claim I built ",
     { text: "skills", url: "https://claude.com/skills", subtle: true },
-    " existed). Before that, I did technical and UX writing at New Relic. In college, I was Co-Editor-in-Chief of the Yale Record, America's oldest humor magazine.",
-  ],
-  [
-    "I currently live in NYC. Outside of work, I like to run, listen to podcasts, and think about food, and often all at once. Lately, I've been vibe coding, bird watching, and reminiscing about when I used to play the ",
-    { text: "piano", url: "https://www.youtube.com/watch?v=IHRoIfBhORU" },
-    " more often.",
+    " before Anthropic did. I currently live in NYC. Depending on the season, you can find me running on Roosevelt Island, bird watching in the Ramble, or skating at World Ice Arena.",
   ],
 ];
 
